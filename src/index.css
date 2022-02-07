@@ -1,13 +1,124 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600&display=swap');
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+:root {
+  --font-base: 'Cormorant Upright', serif;
+  --font-alt: 'Open Sans', sans-serif;
+
+  --color-golden: #dcca87;
+  --color-black: #0c0c0c;
+  --color-gray: #545454;
+  --color-crimson: #f5efdb;
+  --color-grey: #aaaaaa;
+  --color-white: #ffffff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  @apply bg-[#0c0c0c] text-white;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+li {
+  @apply hover:text-gray-400 cursor-pointer;
+}
+.nav-items {
+  @apply cursor-pointer text-[2rem] m-8 text-center text-[#dcca87];
+  font-family: var(--font-base);
+}
+.sub-title {
+  font-family: Cormorant Upright;
+  @apply font-bold text-[23px] leading-[130%] tracking-[.04em] capitalize;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+}
+.golden-title {
+  @apply leading-[130%] text-[#dcca87];
+}
+.normal-font {
+  font-family: Cormorant Upright;
+}
+.p__opensans {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 175%;
+  letter-spacing: 0.04em;
+  @apply 3xl:text-[30px] 3xl:leading-[50px];
+}
+.custom__button {
+  @apply text-base font-bold leading-[175%] tracking-[.04em] text-black py-[8px] px-[32px];
+  font-family: Cormorant Upright;
+  background-color: var(--color-golden);
+}
+.custom-img {
+  background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1955&q=80');
+}
+.serif {
+  font-family: 'Cormorant Upright', serif;
+}
+.font-feature-setting {
+  font-feature-settings: 'tnum' on, 'lnum' on;
+}
+.imgContainer {
+  scrollbar-width: 0px;
+}
+.imgContainer::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+.app__footer-headtext {
+  color: var(--color-white);
+  font-family: var(--font-base);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 41.6px;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+.app__footer-links_logo img:first-child {
+  margin-bottom: 0.75rem;
+  width: 210px;
 }
